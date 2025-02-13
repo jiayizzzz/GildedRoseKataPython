@@ -35,9 +35,9 @@ class GildedRose:
     def update_quality_value(self, item):
         if item.name == "Aged Brie":
             self.increase_quality(item)
-        elif item.name == "Backstage passes to a TAFKAL80ETC concert":
+        elif item.name == "Backstage":
             self.update_backstage_passes(item)
-        elif "Conjured" in item.name:
+        elif item.name == "Conjured":
             self.decrease_quality(item, 2)
         else:
             self.decrease_quality(item, 1)
@@ -55,7 +55,7 @@ class GildedRose:
     def handle_expired_item(self, item):
         if item.name == "Aged Brie":
             self.increase_quality(item)
-        elif item.name == "Backstage passes to a TAFKAL80ETC concert":
+        elif item.name == "Backstage":
             item.quality = 0
         elif "Conjured" in item.name:
             self.decrease_quality(item, 2)
